@@ -84,7 +84,7 @@ with psycopg2.connect(dsn=database_url) as conn:
         SELECT id, text FROM news_stories
         WHERE excluded = FALSE AND date_processed IS NULL
         ORDER BY RANDOM()
-        LIMIT 500;
+        LIMIT 1000;
         """)
         records = cur.fetchall()
 
